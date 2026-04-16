@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Void</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom border-2 border-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">LOGO</a>
+            <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto text-uppercase fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#hero">Domů</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#expozice">Expozice</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#recenze">Recenze</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#rezervace">Rezervace</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container text-center">
+            <div class="hero-text-box">
+                <h1 class="display-1 fw-900 text-uppercase">Moderní umění</h1>
+                <p class="lead fw-bold mb-5">Prozkoumejte hranice své představivosti.</p>
+                <a href="#rezervace" class="btn btn-outline-light rounded-0 px-5 py-3 fw-bold text-uppercase">Koupit vstupenky</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-bottom border-2 border-dark text-center py-4 bg-light text-dark">
+        <div class="container">
+            <h2 class="h6 fw-bold text-uppercase mb-2">Nová výstava začíná za:</h2>
+            <div id="countdown" class="display-6 fw-900 text-magenta">00d 00h 00m 00s</div>
+        </div>
+    </section>
+
+    <section id="carousel-sekce" class="border-bottom border-2 border-dark bg-white">
+        <div id="premiumCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner text-center">
+                
+                <div class="carousel-item active py-5">
+                    <div class="container py-5">
+                        <p class="text-magenta fw-bold text-uppercase mb-1">Speciální událost</p>
+                        <h2 class="display-4 fw-900 text-uppercase">Týden Abstrakce</h2>
+                        <p class="lead fw-bold">Exkluzivní kurátorský výběr. Jen do konce měsíce.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item py-5">
+                    <div class="container py-5">
+                        <p class="text-magenta fw-bold text-uppercase mb-1">VIP Akce</p>
+                        <h2 class="display-4 fw-900 text-uppercase">Noc v Galerii</h2>
+                        <p class="lead fw-bold">Zažijte umění po setmění s živou hudbou a drinkem.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#premiumCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon invert-arrows" aria-hidden="true"></span>
+                <span class="visually-hidden">Předchozí</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#premiumCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon invert-arrows" aria-hidden="true"></span>
+                <span class="visually-hidden">Další</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="expozice" class="py-5">
+        <div class="container">
+            <h2 class="display-6 fw-900 text-uppercase mb-5 border-start border-5 border-magenta ps-3">Aktuální Expozice</h2>
+            <div class="row g-4" id="seznam-expozic">
+                <div class="col-12 text-center py-5 fw-bold text-dark">Načítám expozice ze serveru...</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recenze" class="py-5 bg-white border-top border-2 border-dark text-dark">
+        <div class="container py-5">
+            <h2 class="text-center display-6 fw-900 text-uppercase mb-5">Recenze návštěvníků</h2>
+            
+            <div class="row g-4">
+                
+                <div class="col-12 col-md-4">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/johny_hater.jpg" alt="První Recenze" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Anonymous_332</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Opravdu se mi to tady nelíbilo. Nesplnilo to mé očekávání.</p>
+                        </div>
+
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/avatar-2.jpg" alt="Foto" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Jméno</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mt-4 mt-md-0 pt-md-5">
+                    <div class="d-flex flex-column gap-4 pt-md-4">
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/avatar-3.jpg" alt="Foto" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Jméno</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam.</p>
+                        </div>
+
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/avatar-4.jpg" alt="Foto" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Jméno</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/avatar-5.jpg" alt="Foto" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Jméno</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam.</p>
+                        </div>
+
+                        <div class="p-4 border border-1 border-dark bg-light">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="obrazky/avatar-6.jpg" alt="Foto" class="avatar-img me-3 flex-shrink-0">
+                                <h4 class="fw-bold mb-0 text-uppercase text-dark fs-5">Jméno</h4>
+                            </div>
+                            <p class="mb-0 text-dark" style="line-height: 1.6;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 border-top border-bottom border-2 border-dark text-dark bg-white">
+        <div class="container py-4">
+            <h2 class="text-center display-6 fw-900 text-uppercase mb-5">Často kladené dotazy</h2>
+            <div class="max-width-800 mx-auto" id="faqAkordeon">
+                
+                <div class="card-ostry mb-4 border border-1 border-dark shadow-sm">
+                    <div class="p-4 fw-bold bg-light text-uppercase d-flex justify-content-center align-items-center text-center" data-bs-toggle="collapse" data-bs-target="#odpoved1" style="cursor: pointer; position: relative;">
+                        Máte otevřeno i o víkendu?
+                        <i class="bi bi-chevron-down faq-ikona position-absolute end-0 me-4"></i>
+                    </div>
+                    <div id="odpoved1" class="collapse" data-bs-parent="#faqAkordeon">
+                        <div class="p-4 bg-white border-top border-1 border-dark text-center">
+                            Ano, naše galerie je otevřena každý den včetně víkendů.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-ostry mb-4 border border-1 border-dark shadow-sm">
+                    <div class="p-4 fw-bold bg-light text-uppercase d-flex justify-content-center align-items-center text-center" data-bs-toggle="collapse" data-bs-target="#odpoved2" style="cursor: pointer; position: relative;">
+                        Mohu si uvnitř muzea fotit?
+                        <i class="bi bi-chevron-down faq-ikona position-absolute end-0 me-4"></i>
+                    </div>
+                    <div id="odpoved2" class="collapse" data-bs-parent="#faqAkordeon">
+                        <div class="p-4 bg-white border-top border-1 border-dark text-center">
+                            Focení je povoleno pro osobní účely bez použití blesku a stativu.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-ostry mb-4 border border-1 border-dark shadow-sm">
+                    <div class="p-4 fw-bold bg-light text-uppercase d-flex justify-content-center align-items-center text-center" data-bs-toggle="collapse" data-bs-target="#odpoved3" style="cursor: pointer; position: relative;">
+                        Je muzeum bezbariérové?
+                        <i class="bi bi-chevron-down faq-ikona position-absolute end-0 me-4"></i>
+                    </div>
+                    <div id="odpoved3" class="collapse" data-bs-parent="#faqAkordeon">
+                        <div class="p-4 bg-white border-top border-1 border-dark text-center">
+                            Ano, celý prostor galerie je plně přístupný pro vozíčkáře a disponujeme výtahy.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-ostry mb-4 border border-1 border-dark shadow-sm">
+                    <div class="p-4 fw-bold bg-light text-uppercase d-flex justify-content-center align-items-center text-center" data-bs-toggle="collapse" data-bs-target="#odpoved4" style="cursor: pointer; position: relative;">
+                        Mohu zakoupit lístky na místě?
+                        <i class="bi bi-chevron-down faq-ikona position-absolute end-0 me-4"></i>
+                    </div>
+                    <div id="odpoved4" class="collapse" data-bs-parent="#faqAkordeon">
+                        <div class="p-4 bg-white border-top border-1 border-dark text-center">
+                            Ano, lístky prodáváme i na naší pokladně, ale doporučujeme rezervaci online.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="rezervace" class="py-5 bg-white text-dark border-bottom border-2 border-dark">
+        <div class="container py-5">
+            <h2 class="text-center display-5 fw-900 text-uppercase mb-5">Rezervace</h2>
+            <form action="#" class="row g-4 max-width-800 mx-auto rounded-0 p-5 shadow-sm form-box-svetla border border-1 border-dark">
+                <div class="col-12">
+                    <div class="form-floating text-dark">
+                        <input type="text" class="form-control input-svetla" id="jmeno" placeholder="Jméno" required>
+                        <label for="jmeno">JMÉNO A PŘÍJMENÍ</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating text-dark">
+                        <input type="email" class="form-control input-svetla" id="email" placeholder="Email" required>
+                        <label for="email">E-MAILOVÁ ADRESA</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating text-dark">
+                        <input type="number" class="form-control input-svetla" id="pocet" placeholder="1" required>
+                        <label for="pocet">POČET OSOB</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating text-dark">
+                        <select class="form-select input-svetla" id="typ">
+                            <option value="zakladni" selected>ZÁKLADNÍ</option>
+                            <option value="student">STUDENT</option>
+                        </select>
+                        <label for="typ">TYP VSTUPENKY</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating text-dark">
+                        <input type="date" class="form-control input-svetla" id="datum" required>
+                        <label for="datum">DATUM</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating text-dark">
+                        <input type="time" class="form-control input-svetla" id="cas" required>
+                        <label for="cas">ČAS</label>
+                    </div>
+                </div>
+                <div class="col-12 text-center mt-5">
+                    <button type="submit" class="btn-odeslat-svetla">
+                        <span>ODESLAT REZERVACI</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center display-6 fw-900 text-uppercase mb-5">Kontakt a Mapa</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3 text-uppercase">Naše lokace</h4>
+                    <p class="mb-1"><strong>Adresa:</strong>lorem</p>
+                    <p class="mb-1"><strong>Tel.:</strong> +420 123 456 789</p>
+                    <p class="mb-1"><strong>E-mail:</strong> info@muzeumvoid.cz</p>
+                    <p class="mb-0"><strong>Soc. sítě:</strong> @muzeum_void</p>
+                </div>
+                <div class="col-md-6">
+                    <iframe src="https://maps.google.com/maps?q=Praha&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:2px solid #000;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-2 border-dark fw-bold bg-white text-dark">
+        <small>© MUZEUMVOID 2026 — MODERNÍ UMĚNÍ</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+ 
