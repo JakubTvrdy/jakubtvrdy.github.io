@@ -1,0 +1,146 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.text-magenta {
+    color: #FF0055;
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+/* HERO S TVOJÍ FOTKOU */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+                url('obrazky/hero-bg.jpg') center/cover no-repeat;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* KARTY */
+.card-ostry {
+    border: 2px solid #000;
+    border-radius: 0;
+    transition: 0.3s;
+    color: #000;
+}
+
+.card-ostry:hover {
+    border-color: #FF0055;
+}
+
+#expozice .card-ostry:hover {
+    transform: translateY(-5px);
+}
+
+/* AVATARY */
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    object-fit: cover;
+}
+
+/* INVERZE ŠIPEK U CAROUSELU (Aby byly černé na bílém pozadí) */
+.invert-arrows {
+    filter: invert(1) grayscale(100);
+}
+
+/* Placeholder pro avatary podle wireframu */
+.avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Omezí šířku recenzí, aby nebyly na PC zbytečně roztažené přes celou obrazovku */
+.max-width-1000 {
+    max-width: 1000px;
+}
+
+/* FAQ ANIMACE ŠIPKY */
+.faq-ikona {
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.2rem;
+}
+
+[data-bs-toggle="collapse"]:not(.collapsed) .faq-ikona {
+    transform: rotate(180deg);
+    color: #FF0055;
+}
+
+/* MODERNÍ SVĚTLÝ FORMULÁŘ */
+.form-box-svetla {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.input-svetla {
+    background: #fff !important;
+    color: #333 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0 !important;
+}
+
+.input-svetla:focus {
+    border-color: #FF0055 !important;
+    box-shadow: none !important;
+}
+
+.form-floating > label {
+    color: #555 !important;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #FF0055 !important;
+}
+
+/* TLAČÍTKO */
+.btn-odeslat-svetla {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    padding: 15px 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.btn-odeslat-svetla::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #FF0055;
+    transition: 0.4s;
+    z-index: -1;
+}
+
+.btn-odeslat-svetla:hover::before {
+    left: 0;
+}
+
+.btn-odeslat-svetla:hover {
+    color: #fff;
+    border-color: #FF0055;
+}
