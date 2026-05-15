@@ -5,46 +5,43 @@ body {
     font-family: 'Montserrat', sans-serif;
     background: #fff;
     color: #000;
-    /* Tímhle vypínám vodorovné scrollování. Kdyby mi nějaký prvek náhodou ujel o pixel ven, 
-       tak se mi dole neobjeví ta hnusná lišta a web se nebude kývat do stran. */
+    /* Schválně tu vypínám overflow-x (vodorovné scrollování), aby se mi nerozbil layout stránky, kdyby náhodou nějaký prvek přesáhl šířku obrazovky. */
     overflow-x: hidden;
 }
 
-/* Moje pomocné třídy pro váhu písma a barvu */
+/* Moje pomocné třídy pro udržení jednotného designu napříč webem */
 .fw-900 { font-weight: 900; }
 .text-magenta { color: #FF0055; }
 .max-width-800 { max-width: 800px; }
 .max-width-1000 { max-width: 1000px; }
 
 /* =========================================
-   1. HERO BOX (Statický úvod s fotkou v CSS)
+   1. HERO BOX (Statický úvod)
 ========================================= */
 #hero {
-    /* Tady načítám fotku čistě přes CSS. Rovnou přes ni házím černý filtr 
-       (linear-gradient s 40% a 70% průhledností), aby ten bílý text na ní dobře svítil. */
+    /* Fotku ztmavuju rovnou v CSS pomocí linear-gradient (od 40% do 70% černé). Bílý text v popředí je díky tomu perfektně čitelný. */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
                 url('obrazky/hero-bg.jpg') center/cover no-repeat;
     
-    /* 85vh = 85 % výšky monitoru. Je to tak akorát. */
+    /* Výška 85vh (viewport height) je tu schválně, aby dole vykoukl kousek další sekce a návštěvník instinktivně věděl, že má scrollovat dolů. */
     height: 85vh;
     
-    /* Flexbox mi zaručí, že ten můj textový box bude vždycky perfektně 
-       vycentrovaný uprostřed obrazovky. */
+    /* Používám flexbox pro snadné vertikální i horizontální vycentrování obsahu. */
     display: flex;
     align-items: center;
     color: white;
 }
 
 .hero-text-box {
-    /* Zajišťuje, že text bude vždy nad pozadím */
+    /* Z-index mi hlídá, aby text zůstal vždy v popředí nad pozadím. */
     z-index: 10;
 }
 
 /* =========================================
-   2. CAROUSEL (Jezdící úvod - zmenšený na 85vh)
+   2. CAROUSEL (Jezdící úvod)
 ========================================= */
 #hero-carousel {
-    /* Nastaveno na stejnou velikost jako Hero box (85vh), ať to není přes celou obrazovku. */
+    /* Stejná výška jako statický Hero box pro zachování proporcí webu. */
     height: 85vh;
     background-color: #000;
     overflow: hidden; 
@@ -52,16 +49,15 @@ body {
 
 .obri-obrazek {
     height: 85vh;
-    /* object-fit: cover je zázrak. Obrázek vyplní celej prostor a neroztáhne se do šířky (nedeformuje se). */
+    /* object-fit: cover je super, protože fotku vždycky hezky ořízne, ale nikdy ji nedeformuje a neroztáhne. */
     object-fit: cover;
-    opacity: 0.5; /* Ztmavuju fotku, aby nápisy pěkně svítily a neřezaly do očí. */
+    opacity: 0.5; /* Ztmavení fotky místo filtru. */
     
-    /* Tohle připravuje půdu pro tu animaci přibližování (Ken Burns efekt). 
-       Změna velikosti (transform) bude trvat plynule 10 vteřin. */
+    /* Animace přibližování (Ken Burns efekt). Používám CSS transformaci, protože to prohlížeč líp zvládá a animace se pak neseká. */
     transition: transform 10s linear; 
 }
 
-/* Když se slide stane aktivním, fotka se začne pomaloučku zvětšovat o 10 % (scale 1.1). */
+/* Když Bootstrap přepne slide na aktivní, fotka se začne plynule zvětšovat. */
 .carousel-item.active .obri-obrazek {
     transform: scale(1.1);
 }
@@ -70,41 +66,38 @@ body {
     bottom: 0;
     top: 0;
     z-index: 10;
-    /* Stín za textem pro čitelnost na světlých fotkách */
+    /* Přidání stínu za text pro jistotu, kdyby byla na pozadí moc světlá fotka. */
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-/* Hraju si s rozestupem písmen, ať to vypadá jako moderní logo muzea. */
+/* Zmenšení a zvětšení mezer mezi písmeny pro profi galerijní vzhled. */
 .letter-spacing-tight { letter-spacing: -2px; }
 .letter-spacing-wide { letter-spacing: 4px; }
 
 /* =========================================
-   KARTY A ZAOBLENÍ STRAN (Soft-minimalismus)
+   KARTY A ZAOBLENÍ STRAN
 ========================================= */
 .zaobleni-vetsi, .card-ostry {
-    /* 20px je takový ten moderní "soft" vzhled. Už to není pichlavý, ale pořád to má hrany. */
     border-radius: 20px;
     border: 2px solid #000;
     transition: all 0.3s ease;
     background-color: #fff;
 }
 
-/* Efekt levitace: při najetí myší se karta zvedne o 5px (translateY) 
-   a dostane tvrdý ČERNÝ stín */
+/* Hover efekt: Při najetí myší karta o 5 pixelů povyskočí a hodí tvrdý černý stín. Vypadá to moderně a uživatel hned ví, že se na to dá kliknout. */
 .card-ostry:hover {
-    border-color: #000; /* Rámeček zůstane černý */
-    transform: translateY(-5px); /* Karta povyskočí */
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 1); /* Plně černý stín za kartou! */
+    border-color: #000; 
+    transform: translateY(-5px); 
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 1); 
 }
 
 /* =========================================
-   RECENZE (Mřížka 2x2)
+   RECENZE (Avatary a mřížka)
 ========================================= */
 .avatar-img {
     width: 60px;
     height: 60px;
-    /* 50 % udělá z fotky dokonalý kolečko. Musí k tomu být object-fit: cover, 
-       aby se obličej v tom kolečku nezmáčknul. */
+    /* Border-radius 50% udělá z fotky dokonalé kolečko. Object-fit k tomu zaručí, že se obličej nezmáčkne. */
     border-radius: 50%;
     border: 2px solid #000;
     object-fit: cover;
@@ -122,8 +115,7 @@ body {
     position: relative;
 }
 
-/* Moje uvozovky vyrábím přes pseudo-elementy ::before a ::after. 
-   Díky tomu nemusím uvozovky psát do HTML a můžu je barvit zvlášť růžovou. */
+/* Růžové uvozovky k textu recenze si přidávám čistě přes CSS (pseudo-elementy before a after), abych si zbytečně neplevelil HTML kód. */
 .review-text-grid::before {
     content: '"';
     color: #FF0055;
@@ -139,7 +131,7 @@ body {
 }
 
 /* =========================================
-   FAQ (Sticky Layout & Plus-to-X animace)
+   FAQ (Akordeon a interakce)
 ========================================= */
 .faq-item-clean {
     border-bottom: 2px solid #000;
@@ -157,15 +149,13 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Animace ikonky. Používám cubic-bezier, což je taková "pružná" animace, 
-   která na konci lehce zbrzdí. Vypadá to víc profi než jen lineární pohyb. */
+/* Animace ikonky. Cubic-bezier zajišťuje, že pohyb není jen lineární, ale na konci se plynule zbrzdí. */
 .faq-icon-clean {
     font-size: 2.5rem;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
-/* Atributový selektor: Bootstrap dává divu aria-expanded="true", když je otevřenej. 
-   Já na to reaguju tak, že ikonu otočím o 45 stupňů (takže z plusu vznikne křížek X). */
+/* Odchycení stavu Bootstrapu: Když se odpověď otevře (aria-expanded je true), CSSko samo otočí ikonku o 45 stupňů, takže z plusu je rázem křížek. */
 [data-bs-toggle="collapse"][aria-expanded="true"] .faq-icon-clean {
     transform: rotate(45deg);
     color: #FF0055;
@@ -174,14 +164,12 @@ body {
 /* =========================================
    REZERVACE (Formulář)
 ========================================= */
-/* Menší zaoblení pro vnitřní věci (inputy, tlačítka). !important tam je proto, 
-   aby se to nehádalo s výchozím nastavením Bootstrapu. */
+/* Pomocí !important tu tvrdě přepisuju výchozí vzhled Bootstrapu, abych měl i na inputech ty svoje oblé rohy. */
 .zaobleni-mensi, .form-control, .form-select {
     border-radius: 12px !important;
 }
 
-/* focus = stav, kdy lidi kliknou do políčka. Změním barvu rámečku 
-   a přidám jemnou růžovou záři (box-shadow). */
+/* Focus znamená, že uživatel do políčka zrovna kliknul. Změním barvu rámečku a přidám záři (box-shadow), aby se ve formuláři neztratil. */
 .form-control:focus, .form-select:focus {
     border-color: #FF0055 !important; 
     box-shadow: 0 0 0 4px rgba(255, 0, 85, 0.1) !important; 
@@ -199,8 +187,24 @@ body {
     transform: translateY(-2px);
 }
 
-/* Malá vychytávka na ikonu kalendáře v políčku s datem. */
+/* Malý hack pro sjednocení vzhledu ikonky kalendáře uvnitř inputu pro výběr data. */
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0); 
+}
+
+/* =========================================
+   ANIMACE PŘI SCROLLOVÁNÍ (Scroll Reveal)
+========================================= */
+.reveal {
+    /* Prvky jsou na začátku schované a posunuté o 50px dolů. */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    /* Jakmile JavaScript přidá třídu .active, prvky vyjedou nahoru a zviditelní se. */
+    opacity: 1;
+    transform: translateY(0);
 }
