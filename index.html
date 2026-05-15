@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Void</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGACE S LOGEM -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom border-2 border-dark py-1">
+        <div class="container">
+            <a class="navbar-brand p-0" href="#hero" style="transform: scale(1.4); transform-origin: left center;">
+                <img src="obrazky/logo.png" alt="Museum Void Logo" style="max-height: 45px; width: auto;">
+            </a>
+            
+            <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto text-uppercase fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#hero">Domů</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#expozice">Expozice</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#recenze">Recenze</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#rezervace">Rezervace</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SEKCE -->
+    <section id="hero">
+        <div class="container text-center">
+            <div class="hero-text-box">
+                <h1 class="display-1 fw-900 text-uppercase">Moderní umění</h1>
+                <p class="lead fw-bold mb-5">Prozkoumejte hranice své představivosti.</p>
+                <a href="#rezervace" class="btn btn-outline-light rounded-0 px-5 py-3 fw-bold text-uppercase">Koupit vstupenky</a>
+            </div>
+        </div>
+    </section>
+
+<!-- ODPOČET (Nyní lehce šedivý - bg-light) -->
+    <section class="border-bottom border-2 border-dark py-5 bg-light">
+        <div class="container text-center py-4">
+            <p class="fw-bold text-uppercase mb-4" style="letter-spacing: 4px; color: #000000;">Nová výstava začíná za</p>
+            <div class="d-flex justify-content-center align-items-center gap-3 gap-md-5 countdown-boxy">
+                <!-- Zde je tvůj kód odpočtu (dní, hodin, minut, sekund) -->
+                <div class="text-center">
+                    <div id="cd-d" class="display-2 fw-900 text-dark" style="line-height: 0.9;">00</div>
+                    <div class="fw-bold text-uppercase mt-2" style="font-size: 0.75rem; letter-spacing: 2px;">Dní</div>
+                </div>
+                <div class="display-4 fw-300 text-magenta d-none d-sm-block" style="opacity: 0.3;">/</div>
+                <div class="text-center">
+                    <div id="cd-h" class="display-2 fw-900 text-dark" style="line-height: 0.9;">00</div>
+                    <div class="fw-bold text-uppercase mt-2" style="font-size: 0.75rem; letter-spacing: 2px;">Hodin</div>
+                </div>
+                <div class="display-4 fw-300 text-magenta d-none d-sm-block" style="opacity: 0.3;">/</div>
+                <div class="text-center">
+                    <div id="cd-m" class="display-2 fw-900 text-dark" style="line-height: 0.9;">00</div>
+                    <div class="fw-bold text-uppercase mt-2" style="font-size: 0.75rem; letter-spacing: 2px;">Minut</div>
+                </div>
+                <div class="display-4 fw-300 text-magenta d-none d-sm-block" style="opacity: 0.3;">/</div>
+                <div class="text-center">
+                    <div id="cd-s" class="display-2 fw-900 text-magenta" style="line-height: 0.9;">00</div>
+                    <div class="fw-bold text-uppercase text-dark mt-2" style="font-size: 0.75rem; letter-spacing: 2px;">Sekund</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="hero-carousel" class="carousel slide carousel-fade border-bottom border-2 border-dark" data-bs-ride="carousel" data-bs-interval="4000">
+        
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="obrazky/carousel1.jpg" class="d-block w-100 obri-obrazek" alt="Expozice 1">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-0">
+                    <h1 class="display-1 fw-900 text-uppercase letter-spacing-tight">Museum<br><span class="text-magenta">Void</span></h1>
+                    <p class="fs-4 fw-bold text-uppercase letter-spacing-wide opacity-75">Vstupte do prázdnoty</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="obrazky/carousel2.jpg" class="d-block w-100 obri-obrazek" alt="Expozice 2">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-0">
+                    <h1 class="display-1 fw-900 text-uppercase letter-spacing-tight">Digitální<br><span class="text-magenta">Hranice</span></h1>
+                    <p class="fs-4 fw-bold text-uppercase letter-spacing-wide opacity-75">Umění budoucnosti</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="obrazky/carousel3.jpg" class="d-block w-100 obri-obrazek" alt="Expozice 3">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-0">
+                    <h1 class="display-1 fw-900 text-uppercase letter-spacing-tight">Ztracená<br><span class="text-magenta">Realita</span></h1>
+                    <p class="fs-4 fw-bold text-uppercase letter-spacing-wide opacity-75">Nová expozice</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Předchozí</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Další</span>
+        </button>
+    </section>
+
+<!-- EXPOZICE (Nyní lehce šedivá - bg-light) -->
+    <section id="expozice" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-6 fw-900 text-uppercase mb-5 border-start border-5 border-magenta ps-3">Aktuální Expozice</h2>
+            <div class="row g-4" id="seznam-expozic">
+                <div class="col-12 text-center py-5 fw-bold text-dark">Načítám expozice ze serveru...</div>
+            </div>
+        </div>
+    </section>
+
+<!-- RECENZE (Kompaktní Grid + Sticky Layout) -->
+    <section id="recenze" class="py-5 bg-light text-dark overflow-hidden border-top border-bottom border-2 border-dark">
+        <div class="container py-5">
+            <div class="row g-5 position-relative">
+
+                <!-- LEVÁ STRANA (Sticky Nadpis) -->
+                <div class="col-lg-4">
+                    <div class="position-sticky" style="top: 120px;">
+                        <h2 class="display-3 fw-900 text-uppercase mb-4" style="line-height: 0.9; letter-spacing: -2px;">Hlasy<br>Z Voidu</h2>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="text-magenta fs-5">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                            </div>
+                            <span class="fw-bold fs-6">4.8 / 5</span>
+                        </div>
+                        
+                        <p class="fs-6 text-muted">Autentické zážitky těch, kteří už překročili hranice reality.</p>
+                    </div>
+                </div>
+
+                <!-- PRAVÁ STRANA (Kompaktní mřížka 2x2) -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        
+                        <!-- Recenze 1 -->
+                        <div class="col-md-6 reveal">
+                            <div class="review-item-grid d-flex flex-column h-100">
+                                <p class="review-text-grid mb-4">Opravdu se mi to tady líbilo. Splnilo to mé očekávání.</p>
+                                <div class="d-flex align-items-center mt-auto border-top border-dark pt-3">
+                                    <img src="obrazky/avatar1.jpg" alt="Anonymous" class="avatar-img me-3" style="width: 45px; height: 45px;">
+                                    <div>
+                                        <h4 class="fw-bold mb-0 text-uppercase fs-6">Anonymous_332</h4>
+                                        <div class="text-magenta" style="font-size: 0.75rem;">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recenze 2 -->
+                        <div class="col-md-6 reveal">
+                            <div class="review-item-grid d-flex flex-column h-100">
+                                <p class="review-text-grid mb-4">Všem bych doporučil se sem jít podívat, je to fakt zážitek. Každé dílo je tady dechberoucí.</p>
+                                <div class="d-flex align-items-center mt-auto border-top border-dark pt-3">
+                                    <img src="obrazky/avatar2.jpg" alt="Jan" class="avatar-img me-3" style="width: 45px; height: 45px;">
+                                    <div>
+                                        <h4 class="fw-bold mb-0 text-uppercase fs-6">Jan Yaris</h4>
+                                        <div class="text-magenta" style="font-size: 0.75rem;">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recenze 3 -->
+                        <div class="col-md-6 reveal">
+                            <div class="review-item-grid d-flex flex-column h-100">
+                                <p class="review-text-grid mb-4">Moderní pojetí, které mě naprosto pohltilo. Určitě se sem vrátím na další expozici.</p>
+                                <div class="d-flex align-items-center mt-auto border-top border-dark pt-3">
+                                    <img src="obrazky/avatar3.jpg" alt="Klára" class="avatar-img me-3" style="width: 45px; height: 45px;">
+                                    <div>
+                                        <h4 class="fw-bold mb-0 text-uppercase fs-6">Klára S.</h4>
+                                        <div class="text-magenta" style="font-size: 0.75rem;">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recenze 4 -->
+                        <div class="col-md-6 reveal">
+                            <div class="review-item-grid d-flex flex-column h-100">
+                                <p class="review-text-grid mb-4">Skvělá atmosféra a velmi ochotný personál. Doporučuji navštívit spíše dopoledne.</p>
+                                <div class="d-flex align-items-center mt-auto border-top border-dark pt-3">
+                                    <img src="obrazky/avatar4.jpg" alt="Petr" class="avatar-img me-3" style="width: 45px; height: 45px;">
+                                    <div>
+                                        <h4 class="fw-bold mb-0 text-uppercase fs-6">Petr M.</h4>
+                                        <div class="text-magenta" style="font-size: 0.75rem;">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- FAQ (Asymetrický Layout s tvrdým ohraničením sekce) -->
+    <section id="faq" class="py-5 bg-light text-dark overflow-hidden border-top border-bottom border-2 border-dark">
+        <div class="container py-5">
+            <div class="row g-5 position-relative">
+                
+                <!-- LEVÁ STRANA (Zůstane přilepená při rolování) -->
+                <div class="col-lg-4">
+                    <div class="position-sticky" style="top: 120px;">
+                        <h2 class="display-2 fw-900 text-uppercase mb-4" style="line-height: 0.9; letter-spacing: -2px;">Máš<br>Dotaz?</h2>
+                        <p class="fs-5 text-muted mb-5">Všechno, co potřebuješ vědět, než vstoupíš do Voidu.</p>
+                        
+                        <!-- Malý detail - šipka dolů, která míří k formuláři -->
+                        <a href="#rezervace" class="fw-bold text-dark text-uppercase text-decoration-none border-bottom border-2 border-dark pb-1 d-inline-flex align-items-center gap-2" style="transition: 0.3s;">
+                            Jít rovnou na vstupenky <i class="bi bi-arrow-down-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PRAVÁ STRANA (Samotné otázky - čisté horizontální linky) -->
+                <div class="col-lg-8" id="faqAkordeon">
+                    
+                    <!-- Dotaz 1 -->
+                    <div class="faq-item-clean">
+                        <div class="faq-header-clean" data-bs-toggle="collapse" data-bs-target="#odpoved1">
+                            <span>Máte otevřeno i o víkendu?</span>
+                            <i class="bi bi-plus-lg faq-icon-clean flex-shrink-0"></i>
+                        </div>
+                        <div id="odpoved1" class="collapse" data-bs-parent="#faqAkordeon">
+                            <div class="faq-body-clean">
+                                Ano, naše galerie je otevřena každý den včetně víkendů od 10:00 do 20:00. Během speciálních večerních expozic máme otevřeno až do půlnoci.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dotaz 2 -->
+                    <div class="faq-item-clean">
+                        <div class="faq-header-clean" data-bs-toggle="collapse" data-bs-target="#odpoved2">
+                            <span>Mohu si uvnitř muzea fotit?</span>
+                            <i class="bi bi-plus-lg faq-icon-clean flex-shrink-0"></i>
+                        </div>
+                        <div id="odpoved2" class="collapse" data-bs-parent="#faqAkordeon">
+                            <div class="faq-body-clean">
+                                Focení je povoleno pouze pro osobní účely. Pro ochranu uměleckých děl a zachování atmosféry je však přísně zakázáno používat blesk a stativy.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dotaz 3 -->
+                    <div class="faq-item-clean border-bottom-0"> <!-- Poslední nemá spodní čáru, protože tam už je hrana celé sekce -->
+                        <div class="faq-header-clean" data-bs-toggle="collapse" data-bs-target="#odpoved3">
+                            <span>Lze zakoupit vstupenky až na místě?</span>
+                            <i class="bi bi-plus-lg faq-icon-clean flex-shrink-0"></i>
+                        </div>
+                        <div id="odpoved3" class="collapse" data-bs-parent="#faqAkordeon">
+                            <div class="faq-body-clean">
+                                Ano, lístky prodáváme i na naší fyzické pokladně. Kapacita interaktivních expozic je však velmi omezena, proto silně doporučujeme včasnou online rezervaci.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="rezervace" class="py-5 bg-light text-dark border-top border-bottom border-2 border-dark">
+        <div class="container py-5">
+            
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-uppercase">Rezervace vstupenek</h2>
+                <p class="text-muted">Vyberte si termín a my vám zašleme potvrzení na e-mail.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form action="#" class="bg-white p-4 border border-2 border-dark shadow-sm zaobleni-vetsi">
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Jméno a příjmení</label>
+                            <input type="text" class="form-control border-2 border-dark zaobleni-mensi" placeholder="Např. Jan Novák" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">E-mailová adresa</label>
+                            <input type="email" class="form-control border-2 border-dark zaobleni-mensi" placeholder="jan.novak@seznam.cz" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Datum návštěvy</label>
+                            <input type="date" class="form-control border-2 border-dark zaobleni-mensi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Čas návštěvy</label>
+                            <input type="time" name="cas" class="form-control border-2 border-dark zaobleni-mensi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Typ vstupenky</label>
+                            <select class="form-select border-2 border-dark zaobleni-mensi">
+                                <option value="zakladni">Základní (350 Kč)</option>
+                                <option value="student">Student / Senior (200 Kč)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Počet osob</label>
+                            <input type="number" class="form-control border-2 border-dark zaobleni-mensi" value="1" min="1" max="10">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100 fw-bold text-uppercase py-3 zaobleni-mensi">
+                            Odeslat rezervaci
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center display-6 fw-900 text-uppercase mb-5">Kontakt a Mapa</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3 text-uppercase">Naše lokace</h4>
+                    <p class="mb-1"><strong>Adresa:</strong> Museum Void, Mahlerovy sady 2699/1</p>
+                    <p class="mb-1"><strong>Tel.:</strong> +420 123 456 789</p>
+                    <p class="mb-1"><strong>E-mail:</strong> info@muzeumvoid.cz</p>
+                    <p class="mb-1"><strong>Soc. sítě:</strong> museum_void</p>
+                </div>
+                <div class="col-md-6">
+                    <iframe src="https://maps.google.com/maps?q=Mahlerovy%20sady%202699/1,%20130%2000%20Praha%203&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:2px solid #000;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-2 border-dark fw-bold bg-white text-dark">
+        <small>© MUZEUMVOID 2026 — MODERNÍ UMĚNÍ</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
