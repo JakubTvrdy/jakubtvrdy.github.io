@@ -16,7 +16,7 @@ body {
 .max-width-1000 { max-width: 1000px; }
 
 /* =========================================
-   1. HERO BOX (Statický úvod)
+   1. HERO BOX 
 ========================================= */
 #hero {
     /* Fotku ztmavuju rovnou v CSS pomocí linear-gradient (od 40% do 70% černé). Bílý text v popředí je díky tomu perfektně čitelný. */
@@ -38,7 +38,7 @@ body {
 }
 
 /* =========================================
-   2. CAROUSEL (Jezdící úvod)
+   2. CAROUSEL 
 ========================================= */
 #hero-carousel {
     /* Stejná výška jako statický Hero box pro zachování proporcí webu. */
@@ -70,12 +70,12 @@ body {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-/* Zmenšení a zvětšení mezer mezi písmeny pro profi galerijní vzhled. */
+/* Zmenšení a zvětšení mezer mezi písmeny */
 .letter-spacing-tight { letter-spacing: -2px; }
 .letter-spacing-wide { letter-spacing: 4px; }
 
 /* =========================================
-   KARTY A ZAOBLENÍ STRAN
+   3. EXPOZICE
 ========================================= */
 .zaobleni-vetsi, .card-ostry {
     border-radius: 20px;
@@ -84,7 +84,7 @@ body {
     background-color: #fff;
 }
 
-/* Hover efekt: Při najetí myší karta o 5 pixelů povyskočí a hodí tvrdý černý stín. Vypadá to moderně a uživatel hned ví, že se na to dá kliknout. */
+/* Hover efekt: Při najetí myší karta o 5 pixelů povyskočí a hodí tvrdý černý stín.  */
 .card-ostry:hover {
     border-color: #000; 
     transform: translateY(-5px); 
@@ -92,7 +92,7 @@ body {
 }
 
 /* =========================================
-   RECENZE (Avatary a mřížka)
+   4. RECENZE
 ========================================= */
 .avatar-img {
     width: 60px;
@@ -114,24 +114,20 @@ body {
     color: #000;
     position: relative;
 }
-
-/* Růžové uvozovky k textu recenze si přidávám čistě přes CSS (pseudo-elementy before a after), abych si zbytečně neplevelil HTML kód. */
-.review-text-grid::before {
-    content: '"';
-    color: #FF0055;
-    margin-right: 4px;
-    font-size: 1.3rem;
+/* Úvozovky */
+.review-item-grid {
+    padding: 15px 0;
 }
 
-.review-text-grid::after {
-    content: '"';
-    color: #FF0055;
-    margin-left: 4px;
-    font-size: 1.3rem;
+.review-text-grid {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000;
 }
 
 /* =========================================
-   FAQ (Akordeon a interakce)
+   5. FAQ
 ========================================= */
 .faq-item-clean {
     border-bottom: 2px solid #000;
@@ -162,7 +158,7 @@ body {
 }
 
 /* =========================================
-   REZERVACE (Formulář)
+   6. REZERVACE 
 ========================================= */
 /* Pomocí !important tu tvrdě přepisuju výchozí vzhled Bootstrapu, abych měl i na inputech ty svoje oblé rohy. */
 .zaobleni-mensi, .form-control, .form-select {
@@ -191,20 +187,4 @@ body {
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0); 
-}
-
-/* =========================================
-   ANIMACE PŘI SCROLLOVÁNÍ (Scroll Reveal)
-========================================= */
-.reveal {
-    /* Prvky jsou na začátku schované a posunuté o 50px dolů. */
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal.active {
-    /* Jakmile JavaScript přidá třídu .active, prvky vyjedou nahoru a zviditelní se. */
-    opacity: 1;
-    transform: translateY(0);
 }
