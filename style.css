@@ -92,7 +92,7 @@ body {
 /* Efekt levitace: při najetí myší se karta zvedne o 5px (translateY) 
    a dostane jemně růžovej stín. */
 .card-ostry:hover {
-    border-color: #FF0055;
+    border-color: #000;
     transform: translateY(-5px);
     box-shadow: 8px 8px 0px rgba(255, 0, 85, 0.2); 
 }
